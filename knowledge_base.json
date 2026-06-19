@@ -16,27 +16,27 @@
     "payment": "All payments go through Shopee's secure checkout. We accept ShopeePay, online banking (FPX), credit and debit cards, and cash on delivery (COD) where available.",
     "warranty": "Selected products carry a 1-month seller warranty against defects. The warranty period is stated on each product listing.",
     "stock": "If a product shows as available on our Shopee page, it is in stock. Stock updates in real time on Shopee, so the listing is always the source of truth."
-  },
+   },
   "faq": [
     {
-      "q": "Do you ship to Sabah and Sarawak?",
-      "a": "Yes, we ship to all of Malaysia including Sabah and Sarawak. East Malaysia delivery usually takes 4 to 7 working days."
+      "q": "How will I receive my digital product?",
+      "a": "Once your payment is confirmed, we will send the file, download link, or access code directly to your Shopee Chat."
     },
     {
       "q": "How long does delivery take?",
-      "a": "West Malaysia takes 2 to 4 working days and East Malaysia takes 4 to 7 working days, after a 1 working day processing time."
+      "a": "Orders are typically processed and sent within 5 to 15 minutes during our operating hours (10am to 12am)."
     },
     {
-      "q": "Is the price negotiable?",
-      "a": "Our Shopee prices are already set as low as we can offer. Keep an eye out for vouchers and flash sales for extra savings."
+      "q": "Do I need to pay for shipping?",
+      "a": "No, there are zero shipping fees since all items are delivered virtually."
     },
     {
-      "q": "How do I track my order?",
-      "a": "Once your order ships, the tracking number appears in your Shopee app under 'My Purchases'. You can follow the parcel from there."
+      "q": "Do you provide after-sales support?",
+      "a": "Yes! If you encounter any issues downloading or setting up your digital product, just drop us a message in Shopee Chat."
     },
     {
-      "q": "Are your products original?",
-      "a": "Yes, all our products are 100 percent legit and original"
+      "q": "Are your digital products legit?",
+      "a": "Yes, all our digital products, software, and guides are 100% legitimate and functioning."
     }
   ],
   "products": [
