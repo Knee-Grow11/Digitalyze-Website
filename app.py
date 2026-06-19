@@ -17,6 +17,8 @@ over the FAQ, so you can develop and demo the site before wiring in a model.
 import os
 import json
 import datetime
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -56,7 +58,7 @@ Location: {shop['location']}. Operating hours: {shop['operating_hours']}.
 
 Use ONLY the information below to answer. If a question is not covered here, say you are not sure and offer to connect the customer to the team on WhatsApp. Never invent prices, stock, delivery dates, or policies.
 
-Be warm, concise, and helpful. Reply in the same language the customer uses (English or Bahasa Malaysia). When relevant, gently encourage the customer to check the shop's Shopee page to buy. Keep answers short, usually 1 to 3 sentences.
+Be warm, concise, and helpful. IMPORTANT: Reply in the SAME language the customer wrote their message in. If the customer writes in English, reply only in English. If the customer writes in Bahasa Malaysia, reply only in Bahasa Malaysia. Do not switch languages or mix languages unless the customer does. When relevant, gently encourage the customer to check the shop's Shopee page to buy. Keep answers short, usually 1 to 3 sentences.
 
 === SHOP POLICIES ===
 {policy_text}
@@ -76,12 +78,25 @@ Be warm, concise, and helpful. Reply in the same language the customer uses (Eng
 def call_gemini(system_prompt, user_message):
     import google.generativeai as genai
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        system_instruction=system_prompt,
-    )
-    resp = model.generate_content(user_message)
-    return resp.text.strip()
+    model_candidates = [
+        os.environ.get("GEMINI_MODEL", ""),
+        "gemini-2.5-flash",
+        "gemini-flash-latest",
+        "gemini-2.0-flash",
+    ]
+    last_error = None
+    for name in [m for m in model_candidates if m]:
+        try:
+            model = genai.GenerativeModel(
+                model_name=name,
+                system_instruction=system_prompt,
+            )
+            resp = model.generate_content(user_message)
+            return resp.text.strip()
+        except Exception as e:
+            last_error = e
+            continue
+    raise last_error
 
 
 def call_openai(system_prompt, user_message):
