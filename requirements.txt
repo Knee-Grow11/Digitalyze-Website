@@ -1,0 +1,6 @@
+Flask==3.0.3
+gunicorn==22.0.0
+# Uncomment the line matching the LLM provider you choose:
+google-generativeai==0.8.3
+# openai==1.54.3
+# anthropic==0.39.0

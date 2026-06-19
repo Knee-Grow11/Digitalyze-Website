@@ -1,0 +1,76 @@
+{
+  "shop": {
+    "name": "Digitalyze",
+    "tagline": "Virtual Products at your fingertips",
+    "shopee_url": "https://shopee.com.my/digitalyzejb",
+    "whatsapp": "-",
+    "_comment_whatsapp": "",
+    "location": "Johor Bahru, Johor",
+    "operating_hours": "7 days a week, 10am to 12am",
+    "languages": "We reply in English and Bahasa Malaysia."
+  },
+  "policies": {
+    "shipping": "We ship our products via shopee chat",
+    "shipping_fee": "There are no shipping fee for our products",
+    "returns": "We do not accept returns",
+    "payment": "All payments go through Shopee's secure checkout. We accept ShopeePay, online banking (FPX), credit and debit cards, and cash on delivery (COD) where available.",
+    "warranty": "Selected products carry a 1-month seller warranty against defects. The warranty period is stated on each product listing.",
+    "stock": "If a product shows as available on our Shopee page, it is in stock. Stock updates in real time on Shopee, so the listing is always the source of truth."
+  },
+  "faq": [
+    {
+      "q": "Do you ship to Sabah and Sarawak?",
+      "a": "Yes, we ship to all of Malaysia including Sabah and Sarawak. East Malaysia delivery usually takes 4 to 7 working days."
+    },
+    {
+      "q": "How long does delivery take?",
+      "a": "West Malaysia takes 2 to 4 working days and East Malaysia takes 4 to 7 working days, after a 1 working day processing time."
+    },
+    {
+      "q": "Is the price negotiable?",
+      "a": "Our Shopee prices are already set as low as we can offer. Keep an eye out for vouchers and flash sales for extra savings."
+    },
+    {
+      "q": "How do I track my order?",
+      "a": "Once your order ships, the tracking number appears in your Shopee app under 'My Purchases'. You can follow the parcel from there."
+    },
+    {
+      "q": "Are your products original?",
+      "a": "Yes, all our products are 100 percent legit and original"
+    }
+  ],
+  "products": [
+    {
+      "name": "Product One",
+      "price": "RM 19.90",
+      "description": "A short, honest description of your first product. Mention what it is, the key benefit, and who it's for.",
+      "shopee_url": "https://shopee.com.my/your_shop_username",
+      "image": "product1.svg",
+      "badge": "Bestseller"
+    },
+    {
+      "name": "Product Two",
+      "price": "RM 34.90",
+      "description": "A short description of your second product. Replace this text and the image with your real listing.",
+      "shopee_url": "https://shopee.com.my/your_shop_username",
+      "image": "product2.svg",
+      "badge": ""
+    },
+    {
+      "name": "Product Three",
+      "price": "RM 12.50",
+      "description": "A short description of your third product. Keep it to one or two clear sentences.",
+      "shopee_url": "https://shopee.com.my/your_shop_username",
+      "image": "product3.svg",
+      "badge": "New"
+    },
+    {
+      "name": "Product Four",
+      "price": "RM 49.00",
+      "description": "A short description of your fourth product. Highlight what makes it worth buying.",
+      "shopee_url": "https://shopee.com.my/your_shop_username",
+      "image": "product4.svg",
+      "badge": ""
+    }
+  ]
+}

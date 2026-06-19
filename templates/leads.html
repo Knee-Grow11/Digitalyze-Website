@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leads — {{ shop.name }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    .leads-wrap { max-width: 900px; margin: 56px auto; padding: 0 24px; }
+    .leads-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .leads-head h1 { font-size: 2rem; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: .94rem; }
+    th { background: var(--paper-2); font-family: 'Fraunces', serif; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .empty { background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius); padding: 48px; text-align: center; color: var(--ink-soft); }
+    .count { background: var(--brand-tint); color: var(--brand-deep); font-weight: 600; padding: 4px 12px; border-radius: 100px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="leads-wrap">
+    <div class="leads-head">
+      <h1>Captured leads</h1>
+      <span class="count">{{ leads|length }} total</span>
+    </div>
+    {% if leads %}
+    <table>
+      <thead><tr><th>Name</th><th>Phone</th><th>Note</th><th>Time</th></tr></thead>
+      <tbody>
+        {% for l in leads %}
+        <tr><td>{{ l.name }}</td><td>{{ l.phone }}</td><td>{{ l.note or '—' }}</td><td>{{ l.time }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="empty">No leads captured yet. When a customer shares their contact details through the chat, they'll appear here.</div>
+    {% endif %}
+    <p class="muted" style="margin-top:20px;font-size:.86rem;">Note: leads are stored in memory for this demo and reset when the server restarts. For production, connect a Google Sheet or database.</p>
+  </div>
+</body>
+</html>

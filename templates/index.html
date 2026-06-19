@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ shop.name }} — {{ shop.tagline }}</title>
+  <meta name="description" content="{{ shop.tagline }}. Shop with confidence on Shopee Malaysia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">{{ shop.name[0] }}</span>
+        <span class="brand-name">{{ shop.name }}</span>
+      </a>
+      <nav class="topnav">
+        <a href="#products">Products</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-ghost" href="https://wa.me/{{ shop.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-solid" href="{{ shop.shopee_url }}" target="_blank" rel="noopener">Visit Shopee</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Shopee Malaysia · {{ shop.location }}</p>
+        <h1>{{ shop.tagline }}</h1>
+        <p class="lede">Browse our range below, ask the assistant anything about shipping or stock, and check out securely on Shopee. {{ shop.languages }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid btn-lg" href="#products">Shop the range</a>
+          <button class="btn btn-ghost btn-lg" id="open-chat-hero">Ask a question</button>
+        </div>
+        <ul class="trust-row">
+          <li><strong>Nationwide</strong> delivery</li>
+          <li><strong>Shopee</strong> Guarantee</li>
+          <li><strong>100%</strong> genuine goods</li>
+        </ul>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="receipt">
+          <div class="receipt-head">
+            <span>{{ shop.name }}</span>
+            <span class="receipt-dot"></span>
+          </div>
+          <div class="receipt-line"><span>Ships within</span><span>1 working day</span></div>
+          <div class="receipt-line"><span>West Malaysia</span><span>2–4 days</span></div>
+          <div class="receipt-line"><span>East Malaysia</span><span>4–7 days</span></div>
+          <div class="receipt-line"><span>Returns</span><span>7-day window</span></div>
+          <div class="receipt-rule"></div>
+          <div class="receipt-line receipt-total"><span>Support</span><span>{{ shop.operating_hours.split(',')[0] }}</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="products" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What we sell</h2>
+          <p>Tap any item to view the full listing and buy on Shopee.</p>
+        </div>
+        <div class="grid">
+          {% for p in products %}
+          <article class="card">
+            <a class="card-media" href="{{ p.shopee_url }}" target="_blank" rel="noopener">
+              <img src="/static/{{ p.image }}" alt="{{ p.name }}" loading="lazy">
+              {% if p.badge %}<span class="badge">{{ p.badge }}</span>{% endif %}
+            </a>
+            <div class="card-body">
+              <h3>{{ p.name }}</h3>
+              <p class="card-desc">{{ p.description }}</p>
+              <div class="card-foot">
+                <span class="price">{{ p.price }}</span>
+                <a class="btn btn-solid btn-sm" href="{{ p.shopee_url }}" target="_blank" rel="noopener">Buy on Shopee</a>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+      <div class="wrap faq-layout">
+        <div class="section-head">
+          <h2>Questions, answered</h2>
+          <p>Can't find it here? Ask the assistant in the corner — it knows our shipping, returns, and stock. If it can't help, it'll pass you to us on WhatsApp.</p>
+          <a class="btn btn-ghost" href="https://wa.me/{{ shop.whatsapp }}" target="_blank" rel="noopener">Message us on WhatsApp</a>
+        </div>
+        <div class="faq-list">
+          <details><summary>Do you ship to Sabah and Sarawak?</summary><p>Yes — we ship to all of Malaysia. East Malaysia delivery usually takes 4 to 7 working days.</p></details>
+          <details><summary>How long does delivery take?</summary><p>West Malaysia takes 2 to 4 working days; East Malaysia takes 4 to 7, after a 1 working-day processing time.</p></details>
+          <details><summary>How do I track my order?</summary><p>Your tracking number appears in the Shopee app under “My Purchases” once the parcel ships.</p></details>
+          <details><summary>What payment methods can I use?</summary><p>Everything goes through Shopee checkout — ShopeePay, FPX online banking, cards, and COD where available.</p></details>
+          <details><summary>What's your return policy?</summary><p>Returns are accepted within 7 days for damaged or incorrect items. Record an unboxing video and raise the request through Shopee.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <span class="brand-name">{{ shop.name }}</span>
+        <p class="muted">{{ shop.tagline }}</p>
+      </div>
+      <div class="footer-links">
+        <a href="{{ shop.shopee_url }}" target="_blank" rel="noopener">Shopee store</a>
+        <a href="https://wa.me/{{ shop.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#products">Products</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <p class="copyright muted">© <span id="year"></span> {{ shop.name }} · {{ shop.location }}</p>
+  </footer>
+
+  <!-- Chat widget -->
+  <button class="chat-fab" id="chat-fab" aria-label="Open chat assistant">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </button>
+
+  <section class="chat-panel" id="chat-panel" aria-hidden="true">
+    <header class="chat-head">
+      <div class="chat-head-id">
+        <span class="chat-avatar">{{ shop.name[0] }}</span>
+        <div>
+          <strong>{{ shop.name }} Assistant</strong>
+          <span class="chat-status">Online · replies instantly</span>
+        </div>
+      </div>
+      <button class="chat-close" id="chat-close" aria-label="Close chat">×</button>
+    </header>
+    <div class="chat-log" id="chat-log"></div>
+    <div class="chat-suggestions" id="chat-suggestions">
+      <button>Do you ship to Sabah?</button>
+      <button>How long is delivery?</button>
+      <button>What payment methods?</button>
+    </div>
+    <form class="chat-input" id="chat-form">
+      <input id="chat-text" type="text" placeholder="Type your question…" autocomplete="off" required>
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </section>
+
+  <script>
+    const SHOP_WA = "{{ shop.whatsapp }}";
+    const SHOP_NAME = "{{ shop.name }}";
+  </script>
+  <script src="/static/chat.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
