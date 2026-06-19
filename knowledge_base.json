@@ -41,33 +41,33 @@
   ],
   "products": [
     {
-      "name": "Product One",
-      "price": "RM 19.90",
-      "description": "A short, honest description of your first product. Mention what it is, the key benefit, and who it's for.",
+      "name": "Steam Points (1000 pts)",
+      "price": "RM 1.30 / 1000 pts",
+      "description": "Customize your Steam profile with avatars, backgrounds & chat effects. 1 unit = 1000 points (min. 10 units), sent to your own Steam account.",
       "shopee_url": "https://shopee.com.my/your_shop_username",
       "image": "product1.svg",
-      "badge": "Bestseller"
+      "badge": "Cheapest on Shopee"
     },
     {
-      "name": "Product Two",
-      "price": "RM 34.90",
-      "description": "A short description of your second product. Replace this text and the image with your real listing.",
+      "name": "Valorant Ranked Account (APAC)",
+      "price": "RM 49.00",
+      "description": "Full-access APAC ranked account, Platinum or higher with high MMR. Change email, password & security settings. Latest act, instant delivery, with a 30-day replacement or refund.",
+      "shopee_url": "https://shopee.com.my/your_shop_username",
+      "image": "product3.svg",
+      "badge": "Full Access"
+    },
+    {
+      "name": "Valorant Unban Service",
+      "price": "RM 35.00",
+      "description": "Professional appeal service to help recover your banned Valorant account. Custom-written appeal letters, all regions supported, high success rate. Message us before ordering to confirm eligibility.",
       "shopee_url": "https://shopee.com.my/your_shop_username",
       "image": "product2.svg",
       "badge": ""
     },
     {
-      "name": "Product Three",
-      "price": "RM 12.50",
-      "description": "A short description of your third product. Keep it to one or two clear sentences.",
-      "shopee_url": "https://shopee.com.my/your_shop_username",
-      "image": "product3.svg",
-      "badge": "New"
-    },
-    {
-      "name": "Product Four",
-      "price": "RM 49.00",
-      "description": "A short description of your fourth product. Highlight what makes it worth buying.",
+      "name": "Terraria (Official Steam Game)",
+      "price": "RM 19.90",
+      "description": "The official Terraria game, sent to your Steam account as a gift. Full lifetime ownership, multiplayer ready, instant delivery during office hours. 100% genuine.",
       "shopee_url": "https://shopee.com.my/your_shop_username",
       "image": "product4.svg",
       "badge": ""
